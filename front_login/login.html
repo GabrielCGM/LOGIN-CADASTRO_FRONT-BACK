@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <style>
+        body{
+        margin: 0;
+        padding: 0; 
+    }
+
+    .cont{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(0,3,1);
+        background: linear-gradient(90deg, rgba(0,3,1,1) 28%, rgba(8,38,119,1) 97%);
+    }
+    .login{
+        width: 350px;
+        height: 450px;
+        border: 1px solid rgb(21, 146, 204);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        background: rgb(0,3,1);
+        background: linear-gradient(90deg, rgba(0,3,1,1) 28%, rgba(4,23,73,1) 97%);
+        align-items: center;
+        padding: 30px;
+    }
+
+    .login input{
+        width: 90%;
+        color: white;
+        background-color: rgb(17, 17, 17);
+        outline: none;
+        padding: 20px;
+        margin-top: 10px;
+        border-radius: 10px
+}
+
+#bt{
+    border: 1px solid;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(2, 31, 71);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 30px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 30px;
+}
+#bt:hover{
+
+    border-color: rgb(100, 192, 235);
+    border-radius: 10px;
+    background: rgb(137,186,200);
+    background: linear-gradient(90deg, rgba(137,186,200,1) 0%, rgba(7,164,205,1) 92%);
+
+}
+#bt_login{
+    border: 1px solid;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(2, 31, 71);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 30px;
+    width: 95%;
+    cursor: pointer;
+    font-size: 30px;
+}
+#bt_login:hover{
+    border-color: rgb(100, 192, 235);
+    border-radius: 10px;
+    background: rgb(137,186,200);
+    background: linear-gradient(90deg, rgba(137,186,200,1) 0%, rgba(7,164,205,1) 92%);
+}
+#bt_register{
+    border: 1px solid;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(2, 31, 71);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 30px;
+    width: 95%;
+    cursor: pointer;
+    font-size: 30px;
+}
+#bt_register:hover{
+    border-color: rgb(100, 192, 235);
+    border-radius: 10px;
+    background: rgb(137,186,200);
+    background: linear-gradient(90deg, rgba(137,186,200,1) 0%, rgba(7,164,205,1) 92%);
+}
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+    <body>
+
+        <div class="cont">
+        
+            <div class="login"> 
+            
+                <p id="local_erro"></p>    
+                    <input type="email" placeholder="Email" id="Email", required>
+                    <input type="password" placeholder="Senha" id='senha', required>
+                    <button id='bt' onclick="logar()"> LOGAR </button>
+                    <a href="http://127.0.0.1:5008" id="bt_login" >ESQUECEU A SENHA?</a>
+                    <a href="http://127.0.0.1:5005/" id="bt_register">REGISTRE-SE</a>
+        
+            </div>
+        
+        </div>
+    
+    <script>
+        function pag_log(){
+
+                window.open('http://127.0.0.1:5007/', '_self')
+        }
+
+
+        function error_1(){ //---> MENSAGEM: CAMPOS VAZIOS
+            document.getElementById('local_erro').innerHTML = 'CAMPOS VAZIOS';
+            document.getElementById('local_erro').style.color = 'white'
+            document.getElementById('local_erro').style.fontStyle = 'bold'
+            document.getElementById('local_erro').style.padding = '10px';
+            document.getElementById('local_erro').style.backgroundColor = '#F08080'
+            document.getElementById('local_erro').style.fontStyle = 'bold'
+            document.getElementById('local_erro').style.border = '2 px solid green';
+            document.getElementById('local_erro').style.borderRadius = '20px';
+            document.getElementById('local_erro').style.marginTop = '5px';
+            document.getElementById('Email').style.borderBottom = '1px solid red'
+            document.getElementById('senha').style.borderBottom = '1px solid red'
+        }
+        function error_1_1(){ //---> MENSAGEM: DIGITE UM EMAIL VÁLIDO
+            document.getElementById('local_erro').innerHTML = 'DIGITE UM EMAIL VÁLIDO';
+            document.getElementById('local_erro').style.color = 'white'
+            document.getElementById('local_erro').style.fontStyle = 'bold'
+            document.getElementById('local_erro').style.padding = '10px';
+            document.getElementById('local_erro').style.backgroundColor = '#F08080'
+            document.getElementById('local_erro').style.fontStyle = 'bold'
+            document.getElementById('local_erro').style.border = '2 px solid green';
+            document.getElementById('local_erro').style.borderRadius = '20px';
+            document.getElementById('local_erro').style.marginTop = '5px';
+            document.getElementById('Email').style.borderBottom = '1px solid red'
+        }
+        
+        function error_1_2(){ //---> MENSAGEM: USUÁRIO NÃO CADASTRADO
+            document.getElementById('local_erro').innerHTML = 'USUÁRIO NÃO CADASTRADO';
+            document.getElementById('local_erro').style.color = 'white'
+            document.getElementById('local_erro').style.fontStyle = 'bold'
+            document.getElementById('local_erro').style.padding = '10px';
+            document.getElementById('local_erro').style.backgroundColor = '#F08080'
+            document.getElementById('local_erro').style.fontStyle = 'bold'
+            document.getElementById('local_erro').style.border = '2 px solid green';
+            document.getElementById('local_erro').style.borderRadius = '20px';
+            document.getElementById('local_erro').style.marginTop = '5px';
+            document.getElementById('Email').style.borderBottom = '1px solid red'
+            document.getElementById('senha').style.borderBottom = '1px solid red'
+        }
+        function error_1_3(){ //---> MENSAGEM: EMAIL / SENHAS ERRADOS
+            document.getElementById('local_erro').innerHTML = 'EMAIL / SENHA ERRADOS';
+            document.getElementById('local_erro').style.color = 'white'
+            document.getElementById('local_erro').style.fontStyle = 'bold'
+            document.getElementById('local_erro').style.padding = '10px';
+            document.getElementById('local_erro').style.backgroundColor = '#F08080'
+            document.getElementById('local_erro').style.fontStyle = 'bold'
+            document.getElementById('local_erro').style.border = '2 px solid green';
+            document.getElementById('local_erro').style.borderRadius = '20px';
+            document.getElementById('local_erro').style.marginTop = '5px';
+            document.getElementById('Email').style.borderBottom = '1px solid red'
+            document.getElementById('senha').style.borderBottom = '1px solid red'
+        }
+        function error_1_4(){ //---> MENSAGEM: LOGADO COM SUCESSO
+            document.getElementById('local_erro').innerHTML = 'LOGADO COM SUCESSO';
+            document.getElementById('local_erro').style.color = 'white'
+            document.getElementById('local_erro').style.fontStyle = 'bold'
+            document.getElementById('local_erro').style.padding = '10px';
+            document.getElementById('local_erro').style.backgroundColor = '#00FA9A'
+            document.getElementById('local_erro').style.fontStyle = 'bold'
+            document.getElementById('local_erro').style.border = '2 px solid green';
+            document.getElementById('local_erro').style.borderRadius = '20px';
+            document.getElementById('local_erro').style.marginTop = '5px';
+            return true
+        }
+
+        function logar(){ 
+            document.getElementById('local_erro').innerHTML = ''
+            document.getElementById('Email').style.border = ''
+            document.getElementById('senha').style.border = ''
+        
+            var email = document.getElementById('Email').value
+            var senha = document.getElementById('senha').value
+            urle = 'http://127.0.0.1:5000/logar?email=' + email + '&senha=' + senha 
+            
+            $.ajax({
+                url: urle,
+                method: 'post',
+                success: function(reposta){
+                    switch(reposta){
+                        case '1':  //---> MENSAGEM: CAMPOS VAZIOS
+                            error_1()
+                            break  
+                        case '1.1': //---> MENSAGEM: DIGITE UM EMAIL VÁLIDO
+                            error_1_1()
+                            break
+                        case '1.2': //---> MENSAGEM: USUÁRIO NÃO CADASTRADO
+                            error_1_2()
+                            break
+                        case '1.3': //---> MENSAGEM: EMAIL / SENHAS ERRADOS
+                            error_1_3()
+                            break
+                        case '1.4': //---> MENSAGEM: LOGADO COM SUCESSO
+                            pag_log()
+                            break
+                    }
+                }
+            })
+        }
+
+    </script>
+    </body>
+
+</html>
