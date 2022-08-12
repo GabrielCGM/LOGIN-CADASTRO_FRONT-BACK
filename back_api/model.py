@@ -5,8 +5,8 @@ from sqlalchemy.orm import sessionmaker
 Base = declarative_base()
 
 def retorno_engine():
-    USUARIO = 'root'
-    SENHA = 'samsunggbte342'
+    USUARIO = ''
+    SENHA = ''
     HOST = 'localhost'
     BANCO = 'loginapi'
     PORT = 3306
