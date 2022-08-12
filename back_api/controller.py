@@ -115,9 +115,9 @@ def enviar_email(email_user):
 
     msg = email.message.Message()
     msg['Subject'] = "TROCAR SENHA"
-    msg['From'] = 'testeparaprojetos321@gmail.com'
+    msg['From'] = ''
     msg['To'] = email_user
-    password = 'rnpbvfudamjpbjft' 
+    password = '' 
     msg.add_header('Content-Type', 'text/html')
     msg.set_payload(corpo_email )
 
